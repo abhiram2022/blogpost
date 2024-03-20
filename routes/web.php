@@ -8,6 +8,9 @@ Route::get('/', function () {
     return view('home');
 });
 Route::get('admin/home',[PostController::class,'index'])->middleware(['auth', 'verified'])->name('admin.dashboard');
+Route::get('admin/addpost',[PostController::class,'create'])->middleware(['auth', 'verified'])->name('admin.addpost');
+Route::get('admin/showpost/{id}',[PostController::class,'show'])->middleware(['auth', 'verified'])->name('admin.post.show');
+Route::get('admin/editpost/{id}',[PostController::class,'edit'])->middleware(['auth', 'verified'])->name('admin.post.edit');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -21,7 +21,8 @@ class PostController extends Controller
      */
     public function create()
     {
-        //
+        $categories=Category::get();
+        return view('admin.pages.addpost',compact('categories'));
     }
 
     /**
