@@ -16,7 +16,6 @@
                                     <thead>
                                         <tr>
                                             <th>Slno</th>
-                                            <th>Name</th>
                                             <th>Title</th>
                                             <th>Desc</th>
                                             <th>Post on</th>
@@ -27,7 +26,6 @@
                                     <tfoot>
                                         <tr>
                                             <th>Slno</th>
-                                            <th>Name</th>
                                             <th>Title</th>
                                             <th>Desc</th>
                                             <th>Post on</th>
@@ -43,7 +41,6 @@
                                         @foreach($data as $index => $item)
 									<tr>
 										<td>{{ $index +1 }}</td>
-										<td>{{$item->name}}</td>
 										<td>{{$item->title}}</td>
                                         <td>{{$item->content}}</td>
                                         <td>{{$item->created_at}}</td>
@@ -51,11 +48,17 @@
 										<!-- <td><img src="{{asset('/').$item->brand_image }}"width="60
 											" height="50"/></td> -->
 										<td><a href="{{route('admin.post.show',$item->id)}}" 
-											class="btn btn-success">View</a>
+											class="btn btn-sm btn-success">View</a>
+                                            
                                             <a href="{{route('admin.post.edit',$item->id)}}" 
-											class="btn btn-warning">Edit</a> 
-											<a href="#route('delete.brand',$item->id)" 
-											class="btn btn-danger" id="delete">Delete</a></td>
+											class="btn btn-sm btn-warning">Edit</a> 
+
+											<form action="{{route('admin.post.delete')}}" method="post" >
+                                                @csrf
+                                                <input type='hidden' name="id" value="{{$item->id}}"/>
+											<button type="submit" class="btn btn-sm btn-danger" id="delete" >Delete</button>
+                                            <form>
+                                            </td>
 									</tr>
 								@endforeach
                                     </tbody>

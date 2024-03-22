@@ -11,6 +11,9 @@ Route::get('admin/home',[PostController::class,'index'])->middleware(['auth', 'v
 Route::get('admin/addpost',[PostController::class,'create'])->middleware(['auth', 'verified'])->name('admin.addpost');
 Route::get('admin/showpost/{id}',[PostController::class,'show'])->middleware(['auth', 'verified'])->name('admin.post.show');
 Route::get('admin/editpost/{id}',[PostController::class,'edit'])->middleware(['auth', 'verified'])->name('admin.post.edit');
+Route::post('admin/storepost',[PostController::class,'store'])->middleware(['auth', 'verified'])->name('admin.post.store');
+Route::post('admin/updatepost/{id}',[PostController::class,'store'])->middleware(['auth', 'verified'])->name('admin.post.update');
+Route::post('admin/deletepost',[PostController::class,'destroy'])->middleware(['auth', 'verified'])->name('admin.post.delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

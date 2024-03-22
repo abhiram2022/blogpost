@@ -16,8 +16,8 @@
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
                                     <a class="nav-link" href="{{route('admin.addpost')}}">Add Post</a>
-                                    <a class="nav-link" href="{{route('admin.dashboard')}}">View Post</a>
-                                    <a class="nav-link" href="layout-sidenav-light.html">Publish Post</a>
+                                    <a class="nav-link" href="{{route('admin.dashboard')}}">All Post</a>
+                                    <!-- <a class="nav-link" href="#route('admin.post.show')">View Post</a> -->
                                 </nav>
                             </div>
                             <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
